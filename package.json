@@ -1,15 +1,23 @@
 {
-  "name": "nodejs",
+  "name": "api-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Une API REST en Node.js avec Express et des fichiers HTML/CSS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@types/node": "^22.13.11"
+    "@types/node": "^18.0.6",
+    "express": "^4.18.2",
+    "axios": "^1.7.9",
+    "dotenv": "^10.0.0",
+    "whatwg-url": "^8.7.0",
+    "node-fetch": "^2.7.0",
+    "replicate": "^1.0.1",
+    "groq-sdk": "latest",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "cheerio": "1.0.0",
+    "@google/generative-ai": "^0.21.0"
   }
 }

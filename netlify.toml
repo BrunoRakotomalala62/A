@@ -1,0 +1,15 @@
+[build]
+  command = "npm install"
+  functions = "api"  # Dossier contenant vos fonctions serverless
+  publish = "public"  # Dossier contenant les fichiers statiques (HTML, CSS, JS)
+
+[dev]
+  framework = "#custom"
+  command = "node index.js"  # Commande pour démarrer votre serveur localement
+  targetPort = 5000  # Port sur lequel votre serveur tourne
+  port = 8888  # Port utilisé par Netlify Dev pour le proxy
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

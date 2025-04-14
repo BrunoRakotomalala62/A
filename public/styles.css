@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    background-color: #0a0a0a; /* Fond noir profond */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.7);
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-title {
+    color: #ff0000; /* Titre en rouge */
+    text-shadow: 0px 0px 10px #ff0000;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1000;
+    margin-right: 20px;
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #9900ff; /* Couleur violette */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #0f0f0f;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    z-index: 999;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    padding-top: 80px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+}
+
+.sidebar a {
+    color: #00ff00;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.dropdown span {
+    cursor: pointer;
+    color: #00ccff;
+    display: block;
+    padding: 5px 0;
+    position: relative;
+}
+
+.dropdown span::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.dropdown.active .submenu {
+    display: block;
+}
+
+.dropdown.active span::after {
+    content: '▲';
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.api-box {
+    background: #121212;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
+    border: 2px solid #00ff00;
+}
+
+.api-title {
+    color: #00ff00;
+    text-shadow: 0px 0px 10px #00ff00;
+    font-size: 24px;
+}
+
+.api-category {
+    color: #00ccff;
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+.api-description {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.api-button {
+    background: #00ff00;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px #00ff00;
+}
+
+.api-button:hover {
+    background: #008000;
+    box-shadow: 0px 0px 20px #00ff00;
+}

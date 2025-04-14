@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <h1 class="site-title">REST API'S 🚀</h1>
+        </div>
+        <nav class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="auteur.html">Informations de l'auteur</a></li>
+                <li class="dropdown">
+                    <span>Intelligence artificielle (IA)</span>
+                    <ul class="submenu">
+                        <li><a href="/gem29?question=Bonjour&uid=123">Gemma</a></li>
+                        <li><a href="/gemini?prompt=Bonjour&uid=123">Gemini</a></li>
+                        <li><a href="/deepseek?question=Bonjour&uid=123">Deepseek</a></li>
+                        <li><a href="/deepseek-qwen?question=Bonjour&uid=123">Deepseek Qwen</a></li>
+                        <li><a href="/llama?question=Bonjour&uid=123">Llama</a></li>
+                        <li><a href="/llama11?question=Bonjour&uid=123">Llama 11</a></li>
+                        <li><a href="/qwen-coder?q=Bonjour&uid=123">Qwen Coder</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span>Quiz et Jeux</span>
+                    <ul class="submenu">
+                        <li><a href="/quiz">Quiz</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span>Utilitaires</span>
+                    <ul class="submenu">
+                        <li><a href="/conjugaison?verbe=devoir">Conjugaison</a></li>
+                        <li><a href="/translation?text=Bonjour%20le%20monde&langue=en">Traduction</a></li>
+                        <li><a href="/recherche?synonym=allongement">Synonymes</a></li>
+                        <li><a href="/search?antonym=allongement">Antonymes</a></li>
+                        <li><a href="/wiki?recherche=Kolontsaina">Wikipédia</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span>Malagasy</span>
+                    <ul class="submenu">
+                        <li><a href="/hira?ffpm=Andriamanitra">Fihirana</a></li>
+                        <li><a href="/baiboly?boky=rehetra">Baiboly</a></li>
+                        <li><a href="/mpanakanto?anarana=Princio">Mpanakanto</a></li>
+                        <li><a href="/parole?mpihira=Princio&titre=Allo%20jesosy">Tononkira</a></li>
+                        <li><a href="/fitadiavana?ohabolana=omby&page=1">Ohabolana</a></li>
+                        <li><a href="/audio?tononkalo=audio&page=1">Tononkalo</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span>Autres services</span>
+                    <ul class="submenu">
+                        <li><a href="/date?heure=Madagascar">Date</a></li>
+                        <li><a href="/api?photo=Lémurien">Photos</a></li>
+                        <li><a href="/create">Mail Generator</a></li>
+                        <li><a href="/signe/rechercher?horoscope=belier">Horoscope</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="api-box">
+            <h2 class="api-title">DATE 🌄</h2>
+            <p class="api-category">Date Aujourd'hui🌟</p>
+            <p class="api-description">Une API qui vous permettront de connaître la date actuellement !💖</p>
+            <button class="api-button" id="getButton1">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">BIENVENUE</h2>
+            <p class="api-category">Accueil 🎊</p>
+            <p class="api-description">Une API pour vous accueillir avec enthousiasme et joie ! 🎈</p>
+            <button class="api-button" id="getButton2">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">LLAMA</h2>
+            <p class="api-category">Réponses IA 🧠</p>
+            <p class="api-description">Une API propulsée par Llama pour des réponses intelligentes et pertinentes ! 🤓</p>
+            <button class="api-button" id="getButton3">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">DEEPSEEK</h2>
+            <p class="api-category">Chat Deepseek 💬</p>
+            <p class="api-description">Discutez avec une IA avancée qui comprend et répond intelligemment ! 🗨️</p>
+            <button class="api-button" id="getButton4">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">DEEPSEEK QWEN</h2>
+            <p class="api-category">Deepseek-Qwen 🌟</p>
+            <p class="api-description">Une API avancée pour des conversations engageantes et dynamiques ! 🗣️</p>
+            <button class="api-button" id="getButton5">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">LLAMA 11</h2>
+            <p class="api-category">Llama-11 🚀</p>
+            <p class="api-description">Une API de nouvelle génération pour discuter avec une intelligence remarquable ! ✨</p>
+            <button class="api-button" id="getButton6">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">QWEN CODER</h2>
+            <p class="api-category">Qwen 🖥️</p>
+            <p class="api-description">Une API puissante pour vous assister dans vos discussions et projets technologiques ! 💡</p>
+            <button class="api-button" id="getButton7">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">GEMINI</h2>
+            <p class="api-category">Chat Gemini 🎉</p>
+            <p class="api-description">Cette API est conçue pour répondre aux questions des utilisateurs et peut également interpréter des images. Une utilisation remarquable du service ! ✨</p>
+            <p class="api-author">Auteur : ✅Bruno Rakotomalala🇲🇬</p>
+
+            <!-- Champ de saisie pour l'URL de l'image -->
+            <input type="url" id="imageUrlInput" placeholder="Entrez l'URL de l'image" />
+
+            <button class="api-button" id="getButton8">Envoyer</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🤳CONJUGAISON✍️</h2>
+            <p class="api-category">Tous les Verbes 🕵️</p>
+            <p class="api-description">Une API puissante pour conjuguer tous les verbes à tous les temps. 📚</p>
+            <button class="api-button" id="getButton9">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">QUIZ✅</h2>
+            <p class="api-category">Questions Quiz 🌟</p>
+            <p class="api-description">Une API pour générer des questions de quiz stimulantes ! 🧩</p>
+            <button class="api-button" id="getButton10">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">TRANSLATION ⛅</h2>
+            <p class="api-category">Traduction de texte 🏖️</p>
+            <p class="api-description">Une API pour traduire des textes dans n'importe quelle langue. 🌐</p>
+            <button class="api-button" id="getButton11">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">Fihirana✅</h2>
+            <p class="api-category">Fihirana FFPM 🌺</p>
+            <p class="api-description">Une API pour rechercher les paroles du Fihirana FFPM. 🎶</p>
+            <button class="api-button" id="getButton12">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🤳BAIBOLY✍️</h2>
+            <p class="api-category">Bible Catholique 📖</p>
+            <p class="api-description">Une API puissante pour accéder aux versets de la Bible. ✝️</p>
+            <button class="api-button" id="getButton13">Boky rehetra</button>
+            <button class="api-button" id="getButton14">Boky Exemple</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">SYNONYMES✅</h2>
+            <p class="api-category">Synonymes des mots 🌟</p>
+            <p class="api-description">Une API pour rechercher les synonymes d'un mot. 🔍</p>
+            <button class="api-button" id="getButton15">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">ANTONYMES✅</h2>
+            <p class="api-category">Antonymes des mots 🌟</p>
+            <p class="api-description">Une API pour rechercher les antonymes d'un mot. 🔍</p>
+            <button class="api-button" id="getButton16">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">PHOTO ✅</h2>
+            <p class="api-category">Recherche Photos 🌟</p>
+            <p class="api-description">Une API pour rechercher des photos avec Bing 🔍</p>
+            <button class="api-button" id="getButton17">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🌴 GEMMA ⛅</h2>
+            <p class="api-category">Discussion avec IA🌟</p>
+            <p class="api-description">Une API pour discuter avec l'utilsateur avec une réponse fluide 🔍</p>
+            <button class="api-button" id="getButton18">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🤳TONONKIRA✍️</h2>
+            <p class="api-category">Hira sy mpanakanto📖</p>
+            <p class="api-description">ity API ity dia natao hijerana ireo karazana hiran'ireo mpanakanto ary koa ny tononkira mifanaraka izany 👲</p>
+            <button class="api-button" id="getButton19">Lohateny</button>
+            <button class="api-button" id="getButton20">Tononkira</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🍬 MAIL GENERATOR & RECEPTION 🍧</h2>
+            <p class="api-category">Api Tempmail</p>
+            <p class="api-description">Une API de nouvelle génération permettant à la fois la génération d'adresses e-mail temporaires et la gestion d'une boîte de réception pour une expérience fluide et innovante ! ✨</p>
+            <button class="api-button" id="getButton21">Genererator</button>
+            <button class="api-button" id="getButton22">Message</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🍬 LLAMA NEW 🍧</h2>
+            <p class="api-category">Llama nouveau 🏡</p>
+            <p class="api-description">Une API de nouvelle génération pour discuter avec une intelligence artificielle replit! ✨</p>
+            <button class="api-button" id="getButton23">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🍟 WIKIPEDIA 📺</h2>
+            <p class="api-category">Wikipedia Définition</p>
+            <p class="api-description">Une API de recherche de la définition d'un mot! ✨</p>
+            <button class="api-button" id="getButton24">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">⚗️ OHABOLANA MALAGASY🔑</h2>
+            <p class="api-category">Ohabolana rehetra</p>
+            <p class="api-description">Ity API ity dia natao hitadiavana ohabolana rehetra izay tianao tadiavina ary anisan'ny tsara indrindra ✨</p>
+            <p class="api-author">Auteur : 🛡️Bruno Rakotomalala📺</p>
+            <button class="api-button" id="getButton25">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🧭 AUDIO TONONKALO 🚨</h2>
+            <p class="api-category">Tononkalo Raki-peo</p>
+            <p class="api-description">Ity API ity dia natao hitadiavana raki-peo tononkalo ary ny lohateny sy ny mpamorona azy ✨</p>
+            <p class="api-author">Auteur : 🛡️Bruno Rakotomalala📺</p>
+            <button class="api-button" id="getButton26">Get</button>
+        </div>
+        <div class="api-box">
+            <h2 class="api-title">🧭 HOROSCOPE 🚨</h2>
+            <p class="api-category">Horoscope du jour</p>
+            <p class="api-description">Cet API permet de connaître votre horoscope en effectuant la recherche de votre signe zodiaque✨</p>
+            <p class="api-author">Auteur : ❤️Bruno Rakotomalala😍</p>
+            <button class="api-button" id="getButton27">Get</button>
+        </div>
+
+        <div class="api-box">
+            <h2 class="api-title">🍬 GEMINI 2🍧</h2>
+            <p class="api-category">Test prompt🏡</p>
+            <p class="api-description">Expérimentez la version optimisée de Gemini avec cette API avancée qui analyse vos prompts avec une profondeur exceptionnelle et génère des réponses encore plus nuancées, créatives et contextuellement pertinentes ! ✨</p>
+            <button class="api-button" id="getButton28">Get</button>
+        </div>
+
+
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
