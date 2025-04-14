@@ -152,6 +152,12 @@ document.getElementById("getButton21").addEventListener("click", () => {
     window.location.href = "/create"; // Redirection vers la deuxième route
 });
 
+document.getElementById("getButton30").addEventListener("click", () => {
+    const uid = getUID();
+    window.location.href = `/meta-llama-4?query=Bonjour&uid=${encodeURIComponent(uid)}`;
+});
+
+
 document.getElementById("getButton22").addEventListener("click", () => {
     window.location.href = "inbox?message="; // Redirection vers la deuxième route
 });
