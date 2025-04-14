@@ -39,14 +39,14 @@ router.get('/', async (req, res) => {
         conversationHistory[uid].push({ role: "user", content: question });
 
         console.log(`Tentative d'appel à l'API Groq pour uid: ${uid}`);
-        console.log(`Modèle utilisé: qwen-2.5-coder-32b`);
+        console.log(`Modèle utilisé: deepseek-r1-distill-llama-70b`);
         
         // Essayer d'abord avec le modèle qwen-2.5-coder-32b
         try {
             // Effectuer l'appel à l'API Groq avec l'historique de la conversation
             const chatCompletion = await groq.chat.completions.create({
                 messages: conversationHistory[uid], // Inclure l'historique des messages
-                model: "qwen-2.5-coder-32b",
+                model: "deepseek-r1-distill-llama-70b",
                 temperature: 0.6,
                 max_completion_tokens: 4096,
                 top_p: 0.95,
@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
             // Envoyer la réponse au client
             return res.json({ response: responseText });
         } catch (modelError) {
-            console.error("Erreur avec le modèle qwen-2.5-coder-32b:", modelError);
+            console.error("Erreur avec le modèle deepseek-r1-distill-llama-70b:", modelError);
             console.log("Tentative avec un modèle alternatif...");
             
             // Essayer avec un modèle alternatif en cas d'échec

@@ -1,3 +1,4 @@
+
 const express = require('express');
 const Groq = require('groq-sdk');
 require('dotenv').config();
@@ -33,7 +34,7 @@ router.get('/', async (req, res) => {
 
         const chatCompletion = await groq.chat.completions.create({
             messages: history,
-            model: "deepseek-r1-distill-qwen-32b",
+            model: "deepseek-r1-distill-llama-70b",
             temperature: 0.6,
             max_completion_tokens: 4096,
             top_p: 0.95,
