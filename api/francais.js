@@ -187,9 +187,9 @@ app.get('/grammaire', async (req, res) => {
     // Obtenir la clé API depuis les variables d'environnement
     const apiKey = process.env.TEXTGEARS_API_KEY;
 
-    if (!apiKey) {
-      console.error('Erreur: TEXTGEARS_API_KEY non configurée dans le fichier .env');
-      return res.send(createErrorPage('La clé API TextGears n\'est pas configurée. Veuillez configurer la clé API dans le fichier .env.'));
+    if (!apiKey || apiKey === 'votre_clé_api_textgears_réelle') {
+      console.error('Erreur: TEXTGEARS_API_KEY non configurée correctement dans le fichier .env');
+      return res.send(createErrorPage('La clé API TextGears n\'est pas configurée correctement. Veuillez remplacer "votre_clé_api_textgears_réelle" par une vraie clé API dans le fichier .env.'));
     }
 
     // Appel à l'API TextGears pour la grammaire
@@ -559,9 +559,9 @@ app.get('/texte', async (req, res) => {
     // Obtenir la clé API depuis les variables d'environnement
     const apiKey = process.env.TEXTGEARS_API_KEY;
 
-    if (!apiKey) {
-      console.error('Erreur: TEXTGEARS_API_KEY non configurée dans le fichier .env');
-      return res.send(createErrorPage('La clé API TextGears n\'est pas configurée. Veuillez configurer la clé API dans le fichier .env.'));
+    if (!apiKey || apiKey === 'votre_clé_api_textgears_réelle') {
+      console.error('Erreur: TEXTGEARS_API_KEY non configurée correctement dans le fichier .env');
+      return res.send(createErrorPage('La clé API TextGears n\'est pas configurée correctement. Veuillez remplacer "votre_clé_api_textgears_réelle" par une vraie clé API dans le fichier .env.'));
     }
 
     // Appel à l'API TextGears
