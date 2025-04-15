@@ -39,7 +39,7 @@ API-TEST est une collection complète d'API REST développée avec Node.js et Ex
 
 ### 🔍 Autres services
 - **DATE** - Affichage de la date actuelle
-- **BIENVENUE** - Message d'accueil
+- **FRANÇAIS** - Correcteur grammatical et correction de texte
 - **PHOTO** - Recherche de photos avec Bing
 - **OHABOLANA** - Proverbes malgaches
 - **HOROSCOPE** - Consultation de l'horoscope par signe zodiacal

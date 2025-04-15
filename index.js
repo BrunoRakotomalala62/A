@@ -47,7 +47,6 @@ app.get('/', (req, res) => {
 app.use(express.json());
 
 app.use('/date', dateRoute);
-app.use('/bienvenu', echangeRoute);
 app.use('/liste', devisesRoute);
 app.use('/llama', llamaRoute);
 app.use('/deepseek', deepseekRoute);
@@ -76,6 +75,7 @@ app.use("/fitadiavana", ohabolanaRoute);
 app.use("/audio", audioRoute);
 app.use('/signe', horoscopeRoute);
 app.use('/api/gemini', gemini2Route);
+app.use('/francais', require('./api/francais'));
 
 app._router.stack.forEach((middleware) => {
     if (middleware.route) {

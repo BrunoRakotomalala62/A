@@ -51,7 +51,7 @@ document.getElementById("getButton1").addEventListener("click", () => {
 
 if(document.querySelector('#getButton2')) {
 document.getElementById("getButton2").addEventListener("click", () => {
-    window.location.href = "/bienvenu"; // Redirection vers la deuxième route
+    window.location.href = "/francais"; // Redirection vers la deuxième route
 });
 }
 
