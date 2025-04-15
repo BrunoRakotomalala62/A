@@ -4,16 +4,16 @@ const axios = require('axios');
 const cors = require('cors');
 require('dotenv').config();
 
-const app = express();
-const PORT = 3000;
+// Créer un routeur Express au lieu d'une nouvelle application
+const router = express.Router();
 
 // Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+router.use(cors());
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
 
 // Page d'accueil avec redirection automatique
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
     <html lang="fr">
@@ -139,13 +139,13 @@ app.get('/', (req, res) => {
       <div class="container">
         <h1 class="sparkle">✨ Service de Correction Magnifique ✨</h1>
         
-        <a href="/texte?correction=je%20sui%20avec%20toi&langue=fr" class="service-card">
+        <a href="/francais/texte?correction=je%20sui%20avec%20toi&langue=fr" class="service-card">
           <div class="service-icon">📝</div>
           <div class="service-title">Correction de Texte</div>
           <div class="service-description">Corrigez les fautes d'orthographe et améliorez la qualité de vos textes</div>
         </a>
         
-        <a href="/grammaire?texte=I%20is%20an%20engeneer!&langue=en" class="service-card">
+        <a href="/francais/grammaire?texte=I%20is%20an%20engeneer!&langue=en" class="service-card">
           <div class="service-icon">🔍</div>
           <div class="service-title">Correction Grammaticale</div>
           <div class="service-description">Analysez et corrigez les erreurs grammaticales dans vos textes</div>
@@ -157,7 +157,7 @@ app.get('/', (req, res) => {
 });
 
 // Route pour la correction grammaticale
-app.get('/grammaire', async (req, res) => {
+router.get('/grammaire', async (req, res) => {
   try {
     const { texte, langue, format } = req.query;
     
@@ -465,8 +465,8 @@ app.get('/grammaire', async (req, res) => {
           <h1 class="sparkle">✨ Correction Grammaticale Magnifique ✨</h1>
           
           <div class="nav-links">
-            <a href="/texte?correction=${encodeURIComponent(texte)}&langue=${langue || ''}" class="nav-link">Correction de Texte</a>
-            <a href="/grammaire?texte=${encodeURIComponent(texte)}&langue=${langue || ''}" class="nav-link active">Correction Grammaticale</a>
+            <a href="/francais/texte?correction=${encodeURIComponent(texte)}&langue=${langue || ''}" class="nav-link">Correction de Texte</a>
+            <a href="/francais/grammaire?texte=${encodeURIComponent(texte)}&langue=${langue || ''}" class="nav-link active">Correction Grammaticale</a>
           </div>
           
           <div class="card">
@@ -494,7 +494,7 @@ app.get('/grammaire', async (req, res) => {
           </div>
           
           <div class="correction-form">
-            <form action="/grammaire" method="get">
+            <form action="/francais/grammaire" method="get">
               <textarea name="texte" placeholder="Entrez votre texte à corriger" required>${texte}</textarea>
               <select name="langue">
                 <option value="">Détection automatique</option>
@@ -507,7 +507,7 @@ app.get('/grammaire', async (req, res) => {
               <button type="submit">Corriger la grammaire</button>
             </form>
             <div style="margin-top: 1rem; text-align: center;">
-              <a href="/grammaire?texte=${encodeURIComponent(texte)}&langue=${langue || ''}&format=json" 
+              <a href="/francais/grammaire?texte=${encodeURIComponent(texte)}&langue=${langue || ''}&format=json" 
                  class="json-button" 
                  target="_blank">
                 Voir la réponse JSON
@@ -528,7 +528,7 @@ app.get('/grammaire', async (req, res) => {
 });
 
 // Routes pour la correction de texte
-app.get('/texte', async (req, res) => {
+router.get('/texte', async (req, res) => {
   try {
     const { correction, langue, format } = req.query;
     
@@ -771,8 +771,8 @@ app.get('/texte', async (req, res) => {
           <h1 class="sparkle">✨ Correction Magnifique ✨</h1>
       
       <div class="nav-links">
-        <a href="/texte?correction=${encodeURIComponent(correction)}&langue=${langue || ''}" class="nav-link active">Correction de Texte</a>
-        <a href="/grammaire?texte=${encodeURIComponent(correction)}&langue=${langue || ''}" class="nav-link">Correction Grammaticale</a>
+        <a href="/francais/texte?correction=${encodeURIComponent(correction)}&langue=${langue || ''}" class="nav-link active">Correction de Texte</a>
+        <a href="/francais/grammaire?texte=${encodeURIComponent(correction)}&langue=${langue || ''}" class="nav-link">Correction Grammaticale</a>
       </div>
           
           <div class="card">
@@ -787,7 +787,7 @@ app.get('/texte', async (req, res) => {
           </div>
           
           <div class="correction-form">
-            <form action="/texte" method="get">
+            <form action="/francais/texte" method="get">
               <input type="text" name="correction" placeholder="Entrez votre texte à corriger" value="${correction}" required>
               <select name="langue">
                 <option value="fr" ${language === 'fr-FR' ? 'selected' : ''}>Français</option>
@@ -799,7 +799,7 @@ app.get('/texte', async (req, res) => {
               <button type="submit">Corriger le texte</button>
             </form>
             <div style="margin-top: 1rem; text-align: center;">
-              <a href="/texte?correction=${encodeURIComponent(correction)}&langue=${langue || 'fr'}&format=json" 
+              <a href="/francais/texte?correction=${encodeURIComponent(correction)}&langue=${langue || 'fr'}&format=json" 
                  class="json-button" 
                  target="_blank">
                 Voir la réponse JSON
@@ -886,7 +886,7 @@ function createErrorPage(errorMessage) {
       <div class="error-container">
         <h1>Erreur</h1>
         <div class="error-message">${errorMessage}</div>
-        <a href="/">Retour à l'accueil</a>
+        <a href="/francais">Retour à l'accueil</a>
       </div>
     </body>
     </html>
@@ -947,9 +947,5 @@ function detectLanguage(text) {
   return detectedLang;
 }
 
-// Démarrer le serveur
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
-});
-
-module.exports = app;
+// Exporter le routeur
+module.exports = router;
