@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-TEST - Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #87CEEB; /* Fond bleu ciel */
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .accueil-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .title-box {
+            background: linear-gradient(45deg, #121212, #222);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.7);
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 25px rgba(0, 255, 0, 0.7); }
+            50% { box-shadow: 0 0 40px rgba(0, 255, 0, 1); }
+            100% { box-shadow: 0 0 25px rgba(0, 255, 0, 0.7); }
+        }
+        
+        .main-title {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #8b00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow 8s linear infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .description-section {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.6);
+        }
+        
+        .section-title {
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+        
+        .api-category {
+            background: #1a1a1a;
+            border-left: 4px solid #00ff00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .api-category:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+        }
+        
+        .api-category h3 {
+            color: #00ff00;
+            margin-top: 0;
+        }
+        
+        .api-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .api-item {
+            background: #222;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            color: #00ccff;
+            font-size: 0.9rem;
+            animation: glow 3s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(0, 204, 255, 0.5); }
+            100% { box-shadow: 0 0 15px rgba(0, 204, 255, 0.9); }
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #00ff00;
+            color: black;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #ffffff;
+            box-shadow: 0 0 25px #00ff00, 0 0 35px #00ff00;
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .clock {
+            font-size: 1.2rem;
+            color: #00ff00;
+            margin-bottom: 10px;
+        }
+        
+        .credits {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="accueil-container">
+        <div class="title-box">
+            <h1 class="main-title">🚀 API-TEST HUB 🚀</h1>
+            <p style="color: #00ccff; font-size: 1.2rem;">Une collection complète d'API REST pour vos projets</p>
+        </div>
+        
+        <div class="description-section">
+            <h2 class="section-title">📖 Description</h2>
+            <p>API-TEST est une collection complète d'API REST développée avec Node.js et Express. Cette plateforme regroupe plus de 25 API diverses offrant une multitude de fonctionnalités allant de l'intelligence artificielle à la traduction, en passant par la recherche biblique et bien plus encore.</p>
+        </div>
+        
+        <div class="description-section">
+            <h2 class="section-title">✨ Fonctionnalités</h2>
+            
+            <div class="api-category">
+                <h3>🤖 Intelligence Artificielle</h3>
+                <ul class="api-list">
+                    <li class="api-item">LLAMA</li>
+                    <li class="api-item">DEEPSEEK</li>
+                    <li class="api-item">DEEPSEEK-QWEN</li>
+                    <li class="api-item">LLAMA 11</li>
+                    <li class="api-item">QWEN CODER</li>
+                    <li class="api-item">META-LLAMA-4</li>
+                    <li class="api-item">GEMINI</li>
+                    <li class="api-item">GEMMA</li>
+                    <li class="api-item">GEMINI 2</li>
+                </ul>
+            </div>
+            
+            <div class="api-category">
+                <h3>📚 Outils linguistiques</h3>
+                <ul class="api-list">
+                    <li class="api-item">CONJUGAISON</li>
+                    <li class="api-item">QUIZ</li>
+                    <li class="api-item">TRANSLATION</li>
+                    <li class="api-item">SYNONYMES</li>
+                    <li class="api-item">ANTONYMES</li>
+                </ul>
+            </div>
+            
+            <div class="api-category">
+                <h3>📖 Ressources religieuses</h3>
+                <ul class="api-list">
+                    <li class="api-item">FIHIRANA</li>
+                    <li class="api-item">BAIBOLY</li>
+                    <li class="api-item">TADIAVINA</li>
+                </ul>
+            </div>
+            
+            <div class="api-category">
+                <h3>🎵 Musique</h3>
+                <ul class="api-list">
+                    <li class="api-item">MPANAKANTO</li>
+                    <li class="api-item">TONONKIRA</li>
+                    <li class="api-item">AUDIO</li>
+                </ul>
+            </div>
+            
+            <div class="api-category">
+                <h3>🔍 Autres services</h3>
+                <ul class="api-list">
+                    <li class="api-item">DATE</li>
+                    <li class="api-item">FRANÇAIS</li>
+                    <li class="api-item">PHOTO</li>
+                    <li class="api-item">OHABOLANA</li>
+                    <li class="api-item">HOROSCOPE</li>
+                    <li class="api-item">WIKIPEDIA</li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-button">Retour à l'accueil</a>
+        
+        <div class="footer">
+            <div class="clock" id="real-time-clock">
+                <!-- L'heure sera insérée ici par JavaScript -->
+            </div>
+            <div class="credits">
+                &copy; 2025 Bruno Rakotomalala - Tous droits réservés
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Fonction pour mettre à jour l'horloge en temps réel
+        function updateClock() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById('real-time-clock').textContent = now.toLocaleDateString('fr-FR', options);
+        }
+        
+        // Mettre à jour l'horloge immédiatement puis toutes les secondes
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>

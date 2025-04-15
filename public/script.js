@@ -19,6 +19,30 @@ document.addEventListener('DOMContentLoaded', function() {
     hamburgerMenu.addEventListener('click', function() {
         sidebar.classList.toggle('active');
     });
+    
+    // Vérifier si nous sommes sur la page accueil.html
+    if (window.location.pathname.includes('accueil.html')) {
+        // Code spécifique à la page d'accueil détaillée si nécessaire
+        updateClock();
+        setInterval(updateClock, 1000);
+    }
+    
+    // Fonction pour mettre à jour l'horloge (utilisée sur accueil.html)
+    function updateClock() {
+        if (document.getElementById('real-time-clock')) {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById('real-time-clock').textContent = now.toLocaleDateString('fr-FR', options);
+        }
+    }
 
     // Fermer le menu si on clique en dehors
     document.addEventListener('click', function(event) {
