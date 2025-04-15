@@ -2,6 +2,23 @@
 
 body {
     font-family: 'Orbitron', sans-serif;
+
+/* Correctif pour les problèmes d'affichage sur Vercel */
+@media screen and (max-width: 100%) {
+  body {
+    background-color: #000000; /* Noir pur pour meilleur contraste */
+  }
+  
+  /* Rendre tous les éléments avec effet de lueur plus intenses */
+  [class*="-title"], 
+  [class*="-category"],
+  .api-box,
+  .api-button,
+  .hamburger-menu .bar {
+    filter: brightness(1.3) contrast(1.2);
+  }
+}
+
     text-align: center;
     background-color: #0a0a0a; /* Fond noir profond */
     color: white;
@@ -23,13 +40,14 @@ header {
 
 .site-title {
     color: #ff0000; /* Titre en rouge */
-    text-shadow: 0px 0px 10px #ff0000, 0px 0px 20px #ff0000;
+    text-shadow: 0px 0px 10px #ff0000, 0px 0px 20px #ff0000, 0px 0px 30px #ff0000;
     margin: 0;
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
+    filter: brightness(1.2);
 }
 
 .hamburger-menu {
@@ -135,10 +153,11 @@ header {
     width: 80%;
     max-width: 400px;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.7), inset 0px 0px 10px rgba(0, 255, 0, 0.3);
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.9), 0px 0px 25px rgba(0, 255, 0, 0.5), inset 0px 0px 10px rgba(0, 255, 0, 0.5);
     border: 2px solid #00ff00;
     position: relative;
     overflow: hidden;
+    filter: brightness(1.1) contrast(1.1);
 }
 
 .api-box::after {
@@ -155,11 +174,12 @@ header {
 
 .api-title {
     color: #00ff00;
-    text-shadow: 0px 0px 10px #00ff00, 0px 0px 20px #00ff00;
+    text-shadow: 0px 0px 10px #00ff00, 0px 0px 20px #00ff00, 0px 0px 30px #00ff00;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
+    filter: brightness(1.3);
 }
 
 .api-category {
@@ -167,7 +187,8 @@ header {
     font-size: 16px;
     margin-top: -10px;
     font-weight: bold;
-    text-shadow: 0px 0px 8px #00ccff;
+    text-shadow: 0px 0px 8px #00ccff, 0px 0px 15px #00ccff;
+    filter: brightness(1.2);
 }
 
 .api-description {
@@ -187,10 +208,12 @@ header {
     border-radius: 5px;
     margin-top: 10px;
     transition: 0.3s ease-in-out;
-    box-shadow: 0px 0px 15px #00ff00, inset 0px 0px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 15px #00ff00, 0px 0px 20px rgba(0, 255, 0, 0.7), inset 0px 0px 5px rgba(255, 255, 255, 0.5);
+    filter: brightness(1.2);
 }
 
 .api-button:hover {
     background: #00ff00;
-    box-shadow: 0px 0px 25px #00ff00, 0px 0px 10px #ffffff;
+    box-shadow: 0px 0px 25px #00ff00, 0px 0px 35px #00ff00, 0px 0px 10px #ffffff;
+    filter: brightness(1.3);
 }
